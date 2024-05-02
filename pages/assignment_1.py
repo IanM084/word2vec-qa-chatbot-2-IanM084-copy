@@ -109,8 +109,8 @@ def find_answer(qr_sentence, ques_vec):
     # find out the optimal answer index
     # Hint: if ans_idx is over the number of question-answer pairs, we need to make a if-statement to 
     # return an answer index align with our question-answer dataset
-    while idx > ques_vec.shape[0]:
-        idx = idx - ques_vec.shape[0]
+    while ans_idx > ques_vec.shape[0]:
+        ans_idx = idx - ques_vec.shape[0]
       
     return ans_idx
 
