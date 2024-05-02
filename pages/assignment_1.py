@@ -31,7 +31,7 @@ def token(text):
 df = pd.read_csv("data/Question_Answer_Dataset_v1.2_S10.csv")
 
 # load question and answer vectors generated from pre-trained word2vec model
-vector = np.load("/workspaces/word2vec-qa-chatbot-2-IanM084-copy/data/vector.npz")
+vector = np.load("data/vector.npz")
 ques_vec = vector["x"]
 ans_vec = vector["y"]
 
