@@ -74,7 +74,7 @@ def trained_sentence_vec(sent):
 # Function output: the index of the optimal answer
 # Function goal: do vector search among both question and answer sets
 ###
-def find_answer(qr_sentence, ques_vec, ans_vec):
+def find_answer(qr_sentence, ques_vec):
     # use one query sentence to retrieve answer
     qr_sentence = gensim.utils.simple_preprocess(qr_sentence)
     qr_sentence = token(qr_sentence)
@@ -88,7 +88,7 @@ def find_answer(qr_sentence, ques_vec, ans_vec):
     # define ques_vec as a numpy array that is a float of size 32 bits
     x = np.array(ques_vec).astype(np.float32)
     # define ans_vec as a numpy array that is a float of size 32 bits
-    y = np.array(ans_vec).astype(np.float32)
+    #y = np.array(ans_vec).astype(np.float32)
     # reshape qr_sent_vec
     q = qr_sent_vec.reshape(1, -1)
     # build the faiss index, n_dim=size of vectors using faiss.index_factory with METRIC_INNER_PRODUCT parameter
@@ -99,8 +99,8 @@ def find_answer(qr_sentence, ques_vec, ans_vec):
     index.add(x)
 	
     # add all answers into the faiss index
-    faiss.normalize_L2(y)
-    index.add(y)
+    #faiss.normalize_L2(y)
+    #index.add(y)
 	
     # do vector search for the query sentence
     # return similarity score and idx using index.search function
