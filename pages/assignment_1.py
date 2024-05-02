@@ -37,7 +37,7 @@ ans_vec = vector["y"]
 
 # load th trained word2vec model 
 # Hint: You should use the word2vec model pre-trained with both question and answer sets.
-trained_w2v = gensim.models.Word2Vec.load("/workspaces/word2vec-qa-chatbot-2-IanM084-copy/data/w2v-advanced.model")
+trained_w2v = gensim.models.Word2Vec.load("data/w2v-advanced.model")
 
 # App title
 st.set_page_config(page_title="Word2vec Question and Answer Chatbot")
