@@ -92,7 +92,7 @@ def find_answer(qr_sentence, ques_vec):
     # reshape qr_sent_vec
     q = qr_sent_vec.reshape(1, -1)
     # build the faiss index, n_dim=size of vectors using faiss.index_factory with METRIC_INNER_PRODUCT parameter
-    index = index = faiss.index_factory(x.shape[0], "Flat", faiss.METRIC_INNER_PRODUCT)
+    index = faiss.index_factory(x.shape[0], "Flat", faiss.METRIC_INNER_PRODUCT)
 	
     # add all questions into the faiss index
     faiss.normalize_L2(x)
